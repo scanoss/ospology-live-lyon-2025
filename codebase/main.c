@@ -87,7 +87,7 @@ static int nuke_dir(const char *what)
 
 	closedir(dir);
 
-	return 0;
+	return 0;  
 }
 
 static void summon_the_void(void)
