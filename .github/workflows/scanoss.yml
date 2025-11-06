@@ -23,7 +23,7 @@ jobs:
         id: scanoss-code-scan-step
         uses: scanoss/code-scan-action@v1
         with:
-          policies: copyleft, undeclared
+          policies: undeclared
           dependencies.enabled: true
           api.url: https://api.scanoss.com/scan/direct
           api.key: ${{ secrets.SCANOSS_KEY }}

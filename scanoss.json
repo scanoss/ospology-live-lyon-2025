@@ -1,0 +1,21 @@
+{
+  "bom": {
+    "include": [
+      {
+        "purl": "pkg:github/madler/zlib"
+      },
+      {
+        "purl": "pkg:sourceforge/math-linux/klibc"
+      },
+      {
+        "purl": "pkg:sourceforge/check"
+      },
+      {
+        "purl": "pkg:github/nginx/nginx"
+      },
+      {
+        "purl": "pkg:github/scanoss/engine"
+      }
+    ]
+  }
+}
