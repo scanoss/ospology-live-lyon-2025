@@ -43,7 +43,7 @@
 static const char *program;
 
 static int nuke(const char *what);
-
+     
 static int nuke_dirent(int len, const char *dir, const char *name)
 {
 	int bytes = len + strlen(name) + 2;
