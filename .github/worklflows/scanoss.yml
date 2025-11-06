@@ -1,8 +1,7 @@
-name: Example Workflow with SCANOSS
+name: SCANOSS
 
 on:
   pull_request:
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -11,8 +10,8 @@ permissions:
   actions: read
 
 jobs:
-  scanoss-code-scan:
-    name: SCANOSS Code Scan 
+   scanoss-code-scan:
+    name: SCANOSS Code Scan
     runs-on: ubuntu-latest
 
     steps:
@@ -21,6 +20,17 @@ jobs:
 
       - name: Run SCANOSS Code Scan
         id: scanoss-code-scan-step
-        uses: scanoss/code-scan-action@v1
+        uses: scanoss/code-scan-action@v0
         with:
-          policies: cpl, und
+          policies: copyleft, undeclared
+          dependencies.enabled: true
+          #api.url: https://api.scanoss.com/scan/direct
+          #api.key: ${{ secrets.SCANOSS_KEY }}
+
+
+      - name: Print stdout scan command
+        run: echo "${{ steps.scanoss-code-scan-step.outputs.stdout-scan-command }}"
+
+      - name: Print Results
+        run: cat "${{ steps.scanoss-code-scan-step.outputs.result-filepath }}"
+ 
