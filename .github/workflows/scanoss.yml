@@ -25,8 +25,8 @@ jobs:
         with:
           policies: copyleft, undeclared
           dependencies.enabled: true
-          #api.url: https://api.scanoss.com/scan/direct
-          #api.key: ${{ secrets.SCANOSS_KEY }}
+          api.url: https://api.scanoss.com/scan/direct
+          api.key: ${{ secrets.SCANOSS_KEY }}
 
 
       - name: Print stdout scan command
